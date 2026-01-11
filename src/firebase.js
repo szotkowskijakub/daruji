@@ -1,20 +1,15 @@
 // src/firebase.js
-// ⚠️ DŮLEŽITÉ: Nahraďte tyto hodnoty svými z Firebase Console!
-// Návod jak je získat je v README.md
+   import { initializeApp } from 'firebase/app';
+   import { getFirestore } from 'firebase/firestore';
 
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
+   const firebaseConfig = {
+     apiKey: "AIzaSyBU-WXC5-sZKiMXT4BtpcuqxN31kiaqnI8",
+     authDomain: "daruji-c7539.firebaseapp.com",
+     projectId: "daruji-c7539",
+     storageBucket: "daruji-c7539.firebasestorage.app",
+     messagingSenderId: "235105832530",
+     appId: "1:235105832530:web:48f66430c65df088fd198b"
+   };
 
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "YOUR_API_KEY",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "YOUR_PROJECT.firebaseapp.com",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "YOUR_PROJECT_ID",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "YOUR_PROJECT.appspot.com",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "YOUR_SENDER_ID",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "YOUR_APP_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const storage = getStorage(app);
+   const app = initializeApp(firebaseConfig);
+   export const db = getFirestore(app);
